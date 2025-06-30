@@ -3,12 +3,18 @@
 <head>
   <title>Skills - Gali</title>
   <style>
-    body {
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
       background: #000;
       color: white;
       font-family: Arial, sans-serif;
-      padding: 40px;
     }
+
     nav {
       position: fixed;
       top: 0;
@@ -43,14 +49,21 @@
       color: #00ff00;
     }
 
+    main {
+      padding: 140px 40px 40px; /* Push down so nav doesn't cover it */
+    }
+
     h1 {
       color: #00ff00;
       font-size: 3rem;
+      margin-bottom: 20px;
     }
+
     ul {
       font-size: 1.5rem;
-      margin-top: 20px;
+      list-style: disc inside;
     }
+
     li {
       margin-bottom: 10px;
     }
@@ -58,7 +71,7 @@
 </head>
 <body>
 
-   <!-- Navigation -->
+  <!-- Navigation -->
   <nav>
     <div class="logo">Gali</div>
     <div class="nav-links">
@@ -70,13 +83,16 @@
     </div>
   </nav>
 
-  
-  <h1>Skills</h1>
-  <ul>
-    <li>Roblox Studio</li>
-    <li>Lua Scripting</li>
-    <li>UI Design</li>
-    <li>Game Planning</li>
-  </ul>
+  <!-- Main Content -->
+  <main>
+    <h1>Skills</h1>
+    <ul>
+      <li>Roblox Studio</li>
+      <li>Lua Scripting</li>
+      <li>UI Design</li>
+      <li>Game Planning</li>
+    </ul>
+  </main>
+
 </body>
 </html>
