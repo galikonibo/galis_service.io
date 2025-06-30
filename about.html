@@ -9,6 +9,43 @@
       font-family: Arial, sans-serif;
       padding: 40px;
     }
+        nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #888;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #00ff00;
+    }
+
+    main {
+      padding: 140px 40px 40px; /* Push down so nav doesn't cover it */
+    }
     h1 {
       color: #00ff00;
       font-size: 3rem;
@@ -20,6 +57,19 @@
   </style>
 </head>
 <body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">Gali</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="work.html">Work</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
   <h1>About</h1>
   <p>I'm Gali, a creative Roblox developer. I build games, script cool things, and enjoy learning new tech.</p>
 </body>
