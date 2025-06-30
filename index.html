@@ -1,25 +1,231 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Stef Clone</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gali's Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    body {
-      background: black;
-      color: white;
-      text-align: center;
-      font-family: Arial;
-      padding-top: 100px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    .green {
-      color: limegreen;
+
+    html, body {
+      scroll-behavior: smooth;
+      font-family: 'Arial', sans-serif;
+      background: #000;
+      color: white;
+      height: 100%;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      z-index: 1000;
+    }
+
+    .logo {
       font-weight: bold;
+      font-size: 1.5rem;
+      color: #00ff00;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #00ff00;
+    }
+
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100vh;
+      padding: 150px 40px 40px;
+    }
+
+    .avatar {
+      width: 140px;
+      border-radius: 50%;
+      animation: bounce 1s infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .intro {
+      font-size: 2.8rem;
+      font-weight: bold;
+    }
+
+    .highlight {
+      color: #00ff00;
+    }
+
+    .typing {
+      font-size: 1.5rem;
+      color: #00ff00;
+      font-weight: bold;
+      margin-top: 10px;
+      min-height: 35px;
+    }
+
+    section {
+      padding: 100px 40px;
+      max-width: 900px;
+    }
+
+    h2 {
+      color: #00ff00;
+      margin-bottom: 15px;
+    }
+
+    .socials {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .socials a {
+      color: white;
+      font-size: 1.5rem;
+      transition: color 0.2s;
+    }
+
+    .socials a:hover {
+      color: #00ff00;
     }
   </style>
 </head>
 <body>
-  <h1>hi!! I'm <span class="green">stef</span></h1>
-  <h2 class="green">I make games</h2>
-  <p>made with my 300 iq mental capacity brain ❤️!!!</p>
-  <p>© I OWN THE RIGHTS..... THAT’S RIGHT.. I DO… YOU HAVE NO RIGHTS!! ⚡⚡</p>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">gali</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="main-container" id="home">
+    <img src="https://i.postimg.cc/wBxH1hw2/gali.webp" alt="Avatar" class="avatar" id="avatar">
+    <div class="intro">hello! I'm <span class="highlight">gali</span></div>
+    <div class="typing" id="typewriter"></div>
+  </div>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About</h2>
+    <p>I'm Gali, a creative Roblox developer. I like building games, scripting fun features, and bringing ideas to life through code. Getting hungry to learn more every day!</p>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>Roblox Studio</li>
+      <li>Lua Scripting</li>
+      <li>UI Design</li>
+      <li>Game Planning</li>
+    </ul>
+  </section>
+
+  <!-- Work Section -->
+  <section id="work">
+    <h2>Work</h2>
+    <p>Coming soon! I’ll show off some games and scripts I made once I finish them 💻</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>You can find me on Discord or GitHub. Let’s connect and build something cool!</p>
+  </section>
+
+  <!-- Socials -->
+  <div class="socials">
+    <a href="discordapp.com/users/1091686277042163803" target="_blank"><i class="fab fa-discord"></i></a>
+    <a href="https://www.roblox.com/users/2834178585/profile" target="_blank"><i class="fas fa-cube"></i></a>
+    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+  </div>
+
+  <script>
+    const phrases = [
+      "I make Roblox games   ",
+      "I mostly script in Lua   ",
+      "I love learning code   ",
+      "HTML is kinda cool   "
+    ];
+
+    let i = 0;
+    let j = 0;
+    let currentPhrase = [];
+    let isDeleting = false;
+    const typewriter = document.getElementById('typewriter');
+
+    function loop() {
+      typewriter.innerHTML = currentPhrase.join('');
+
+      if (i < phrases.length) {
+        if (!isDeleting && j <= phrases[i].length) {
+          currentPhrase.push(phrases[i][j]);
+          j++;
+        }
+
+        if (isDeleting && j <= phrases[i].length) {
+          currentPhrase.pop();
+          j--;
+        }
+
+        if (j === phrases[i].length) {
+          isDeleting = true;
+          setTimeout(loop, 1500); return;
+        }
+
+        if (isDeleting && j === 0) {
+          currentPhrase = [];
+          isDeleting = false;
+          i++;
+          if (i === phrases.length) {
+            i = 0;
+          }
+        }
+      }
+
+      const speed = isDeleting ? 50 : 110;
+      setTimeout(loop, speed);
+    }
+
+    loop();
+  </script>
 </body>
 </html>
