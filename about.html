@@ -3,13 +3,19 @@
 <head>
   <title>About - Gali</title>
   <style>
-    body {
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
       background: #000;
       color: white;
       font-family: Arial, sans-serif;
-      padding: 40px;
     }
-        nav {
+
+    nav {
       position: fixed;
       top: 0;
       width: 100%;
@@ -44,15 +50,17 @@
     }
 
     main {
-      padding: 140px 40px 40px; /* Push down so nav doesn't cover it */
+      padding: 140px 40px 40px;
     }
+
     h1 {
       color: #00ff00;
       font-size: 3rem;
+      margin-bottom: 20px;
     }
+
     p {
       font-size: 1.3rem;
-      margin-top: 20px;
     }
   </style>
 </head>
@@ -70,7 +78,11 @@
     </div>
   </nav>
 
-  <h1>About</h1>
-  <p>I'm Gali, a creative Roblox developer. I build games, script cool things, and enjoy learning new tech.</p>
+  <!-- Main content -->
+  <main>
+    <h1>About</h1>
+    <p>I'm Gali, a creative Roblox developer. I build games, script cool things, and enjoy learning new tech.</p>
+  </main>
+
 </body>
 </html>
